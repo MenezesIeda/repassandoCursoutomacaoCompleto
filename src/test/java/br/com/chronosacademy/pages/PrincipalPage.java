@@ -1,0 +1,37 @@
+package br.com.chronosacademy.pages;
+
+import br.com.chronosacademy.maps.PrincipalMap;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import static org.junit.Assert.assertEquals;
+
+public class PrincipalPage {
+    private WebDriver driver;
+    private PrincipalMap principalMap;
+
+
+    public PrincipalPage(WebDriver driver) {
+
+        this.driver = driver;
+        principalMap = new PrincipalMap();
+        PageFactory.initElements(driver,principalMap);
+    }
+
+    public String getTitulo() {
+
+        return principalMap.h4Titulo.getText();
+
+
+    }
+
+    public void clickBotao() {
+
+               principalMap.btnBotao.click();
+    }
+
+    }
+
+
